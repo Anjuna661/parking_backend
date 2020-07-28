@@ -8,7 +8,7 @@ pipeline {
 	}
 	stage('Build') {
 		steps {
-			withSonarQubeEnv('sonar') {
+			withSonarQubeEnv('Sonar') {
 				sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
 			}
 		}
@@ -20,12 +20,12 @@ pipeline {
               }
             }
           }
-	stage ('Deploy') {
+	stage ('deploy') {
 		steps {
 			sh '/opt/maven/bin/mvn clean deploy -Dmaven.test.skip=true'
 		}
 	}
-	stage ('Release') {
+	stage ('Release and') {
 		steps {
 			sh 'export JENKINS_NODE_COOKIE=dontkillme ;nohup java -jar $WORKSPACE/target/*.jar &'
 		}
