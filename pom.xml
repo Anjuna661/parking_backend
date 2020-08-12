@@ -9,14 +9,14 @@
 	</parent>
 	<groupId>com.hcl</groupId>
 	<artifactId>parking</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>parking</name>
 	<description>Demo project for Spring Boot</description>
 	<scm>
           <connection>scm:git:https://github.com/adil1806/parking_backend.git</connection>
          <url>https://github.com/adil1806/parking_backend.git</url>
 	 <developerConnection>scm:git:https://github.com/adil1806/parking_backend.git</developerConnection>
-	 <tag>0.0.1</tag>
+	 <tag>0.0.2</tag>
 	</scm>
 	<properties>
 		<java.version>1.8</java.version>
