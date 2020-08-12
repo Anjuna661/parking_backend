@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -11,10 +9,15 @@
 	</parent>
 	<groupId>com.hcl</groupId>
 	<artifactId>parking</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>parking</name>
 	<description>Demo project for Spring Boot</description>
-
+	<scm>
+          <connection>scm:git:https://github.com/adil1806/parking_backend.git</connection>
+         <url>https://github.com/adil1806/parking_backend.git</url>
+	 <developerConnection>scm:git:https://github.com/adil1806/parking_backend.git</developerConnection>
+	 <tag>0.0.1</tag>
+	</scm>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -76,10 +79,11 @@
 		</dependency>
 	</dependencies>
 	<distributionManagement>
-	  <snapshotRepository>
-	    <id>nexus</id>
-	    <url>http://13.233.201.241:8081/repository/maven-snapshots</url>
-	  </snapshotRepository>
+	  <repository>
+	    <id>github</id>
+	    <name>adil1806</name>
+	    <url>https://maven.pkg.github.com/adil1806/parking_backend</url>
+	  </repository>
 	</distributionManagement>
 	
 	<build>
@@ -113,6 +117,23 @@
 			    <artifactId>sonar-maven-plugin</artifactId>
 			    <version>3.7.0</version>
 			</plugin>
+			<plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-release-plugin</artifactId>
+	       <version>3.0.0-M1</version>
+	        <configuration>
+	        <checkModificationExcludes>
+                 <checkModificationExclude>pom.xml</checkModificationExclude>
+		 <checkModificationExclude>pom.xml.bcp</checkModificationExclude>
+        	 </checkModificationExcludes>
+		 <tagBase>https://github.com/adil1806/parking_backend.git/tag</tagBase>
+                 <releaseProfiles>release</releaseProfiles>
+                 <autoVersionSubmodules>true</autoVersionSubmodules>
+                 <pushChanges>false</pushChanges>
+                 <localCheckout>true</localCheckout>
+	         <tagNameFormat>@{project.version}</tagNameFormat>
+               </configuration>
+               </plugin>
 		</plugins>
 	</build>
 </project>
