@@ -80,10 +80,13 @@
 	</dependencies>
 	<distributionManagement>
 	  <repository>
-	    <id>github</id>
-	    <name>adil1806</name>
-	    <url>https://maven.pkg.github.com/adil1806/parking_backend</url>
-	  </repository>
+		<id>release</id>
+	  <url>http://18.188.187.108:8081/repository/maven-releases/</url>
+  </repository>
+ <snapshotRepository>
+    <id>nexus</id>
+    <url>http://18.188.187.108:8081/repository/maven-snapshots/</url>
+  </snapshotRepository>
 	</distributionManagement>
 	
 	<build>
